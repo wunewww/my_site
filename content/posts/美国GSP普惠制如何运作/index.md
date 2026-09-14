@@ -12,6 +12,8 @@ tags = ["GSP", "关税", "美国贸易法", "国际经济法"]
 
 下图将**法律颁布、优惠开始实施、国会重新授权及授权届满**分别标出。较早时期还有多次短期续期；这里突出制度建立和近年的主要间断。日期依据[美国国会研究处的授权沿革表](https://www.congress.gov/crs_external_products/RL/PDF/RL33663/RL33663.64.pdf)及[美国贸易代表办公室（USTR）的GSP指南](https://ustr.gov/sites/default/files/files/gsp/GSP%20Guidebook%20April%202018.pdf)。
 
+{{< page-css "timeline.css" >}}
+
 <div class="gsp-timeline" aria-label="美国GSP制度主要时间节点">
   <ol>
     <li class="gsp-timeline__enacted"><time datetime="1975-01-03">1975年1月3日</time><div><span class="gsp-timeline__type">颁布</span><strong>《1974年贸易法》签署</strong><span>第五编确立GSP的法律框架。</span></div></li>

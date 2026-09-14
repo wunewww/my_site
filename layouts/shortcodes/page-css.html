@@ -1,0 +1,6 @@
+{{- $name := .Get 0 -}}
+{{- with .Page.Resources.Get $name -}}
+<link rel="stylesheet" href="{{ .RelPermalink }}">
+{{- else -}}
+{{- errorf "page-css: %q not found in page bundle %q" $name .Page.File.Path -}}
+{{- end -}}
