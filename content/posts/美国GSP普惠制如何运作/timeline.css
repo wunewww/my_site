@@ -1,0 +1,101 @@
+/* GSP article timeline */
+.gsp-timeline {
+  --gsp-line: rgb(var(--color-neutral-300));
+  --gsp-accent: rgb(var(--color-primary-600));
+  --gsp-expired: rgb(var(--color-neutral-500));
+  margin: 2rem 0;
+}
+
+.gsp-timeline ol {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.gsp-timeline ol::before {
+  content: "";
+  position: absolute;
+  top: 0.75rem;
+  bottom: 0.75rem;
+  left: 10.6rem;
+  width: 2px;
+  background: var(--gsp-line);
+}
+
+.gsp-timeline li {
+  position: relative;
+  display: grid;
+  grid-template-columns: 9.5rem minmax(0, 1fr);
+  gap: 2.2rem;
+  margin: 0;
+  padding: 0 0 1.35rem;
+}
+
+.gsp-timeline li:last-child { padding-bottom: 0; }
+
+.gsp-timeline li::before {
+  content: "";
+  position: absolute;
+  top: 0.4rem;
+  left: 10.25rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  box-sizing: border-box;
+  border: 2px solid var(--gsp-accent);
+  border-radius: 50%;
+  background: rgb(var(--color-neutral-50));
+  z-index: 1;
+}
+
+.gsp-timeline__active::before,
+.gsp-timeline__renewed::before { background: var(--gsp-accent) !important; }
+.gsp-timeline__expired::before { border-color: var(--gsp-expired) !important; }
+
+.gsp-timeline time {
+  padding-top: 0.1rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.4;
+  font-variant-numeric: tabular-nums;
+  color: rgb(var(--color-neutral-700));
+}
+
+.gsp-timeline li > div {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--gsp-line);
+  border-radius: 0.7rem;
+  background: rgb(var(--color-neutral-50));
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+}
+
+.gsp-timeline__type {
+  display: inline-block;
+  margin: 0 0.5rem 0.3rem 0;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  background: rgb(var(--color-primary-100));
+  color: rgb(var(--color-primary-700));
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.gsp-timeline__expired .gsp-timeline__type {
+  background: rgb(var(--color-neutral-200));
+  color: rgb(var(--color-neutral-700));
+}
+
+.gsp-timeline strong { display: inline; font-size: 0.95rem; }
+.gsp-timeline li > div > span:last-child:not(.gsp-timeline__type) {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.84rem;
+  line-height: 1.55;
+  color: rgb(var(--color-neutral-600));
+}
+
+@media (max-width: 640px) {
+  .gsp-timeline ol::before { left: 0.38rem; }
+  .gsp-timeline li { grid-template-columns: minmax(0, 1fr); gap: 0.35rem; padding-left: 1.75rem; }
+  .gsp-timeline li::before { left: 0; }
+}
