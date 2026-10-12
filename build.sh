@@ -86,7 +86,7 @@ main() {
   # Fetch full Git history
   if [[ $(git rev-parse --is-shallow-repository) == true ]]; then
     echo "Fetching full Git history..."
-    git fetch --unshallow
+    git fetch --unshallow --no-recurse-submodules
   fi
 
   # Initialize Git submodules
